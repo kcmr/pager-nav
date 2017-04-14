@@ -1,0 +1,32 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="um-pagination-styles.html">
+<!--
+`<um-pagination>` description.
+
+Example:
+
+```html
+<um-pagination></um-pagination>
+```
+
+## Styling
+
+The following custom properties and mixins are available for styling:
+
+| Custom property | Description     | Default        |
+|:----------------|:----------------|:--------------:|
+| --um-pagination  | Mixin applied to :host     | {}  |
+| --cells-fontDefault  | Font family of :host    | sans-serif  |
+
+@demo demo/index.html
+-->
+<dom-module id="um-pagination">
+  <template>
+    <style include="um-pagination-styles um-pagination-shared-styles"></style>
+    <button class="btn-prev" data-url$="[[previousUrl]]" data-btn="previous" on-tap="_onTap">[[previousText]]</button>
+    <content></content>
+    <button class="btn-next" data-url$="[[nextUrl]]" data-btn="next" on-tap="_onTap">[[nextText]]</button>
+  </template>
+  <script src="um-pagination.js"></script>
+</dom-module>

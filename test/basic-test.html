@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../um-pagination.html">
+</head>
+
+<body>
+  <test-fixture id="default">
+    <template>
+      <um-pagination></um-pagination>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('<um-pagination>', function() {
+      var el;
+      var btnPrev;
+      var btnNext;
+
+      setup(function() {
+        el = fixture('default');
+        btnPrev = el.$$('.btn-prev');
+        btnNext = el.$$('.btn-next');
+      });
+
+      test('setting previousUrl attribute sets that value to previous button', function() {
+        el.previousUrl = 'p';
+        assert.equal(btnPrev.dataset.url, 'p');
+      });
+
+      test('setting previous-text attribute sets that value to previous button', function() {
+        el.previousText = 'previous';
+        assert.equal(btnPrev.innerHTML, el.previousText);
+      });
+
+      test('setting nextUrl attribute sets that value to next button', function() {
+        el.nextUrl = 'n';
+        assert.equal(btnNext.dataset.url, 'n');
+      });
+
+      test('setting next-text attribute sets that value to next button', function() {
+        el.nextText = 'next';
+        assert.equal(btnNext.innerHTML, el.nextText);
+      });
+
+      test('clicking a button fires "pagination-click" event', function() {
+        var spy = sinon.spy();
+        el.addEventListener('pagination-click', spy);
+        el.previousUrl = 'any';
+
+        btnPrev.click();
+
+        assert.isTrue(spy.called);
+        assert.equal(spy.getCall(0).args[0].detail.url, 'any');
+        assert.equal(spy.getCall(0).args[0].detail.item, 'previous');
+      });
+    });
+  </script>
+</body>
+
+</html>
