@@ -50,6 +50,14 @@
       nextIcon: String,
 
       /**
+       * Size (width and height) for the previous and next icons.
+       */
+      iconSize: {
+        type: Number,
+        value: 24
+      },
+
+      /**
        * Hide button text (not icon) visually but keep it readable for screen readers.
        */
       hideButtonText: {

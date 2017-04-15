@@ -68,6 +68,18 @@
         });
       });
 
+      test('setting icon-size attribute sets that size to the icons', function(done) {
+        el.nextIcon = 'any';
+        el.iconSize = 33;
+        flush(function() {
+          var icon = el.$$('.btn-next iron-icon');
+          assert.equal(icon.getComputedStyleValue('width'), '33px');
+          assert.equal(icon.getComputedStyleValue('height'), '33px');
+          done();
+        });
+
+      });
+
       test('clicking a button fires "pagination-click" event with url and item detail', function() {
         var spy = sinon.spy();
         el.addEventListener('pagination-click', spy);
