@@ -1,6 +1,6 @@
 {
   "name": "pager-nav",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Custom element that displays typical previus and next buttons in a pagination.",
   "keywords": [
     "web-component",
