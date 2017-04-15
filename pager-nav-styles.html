@@ -1,4 +1,4 @@
-<dom-module id="um-pagination-styles"><template><style>
+<dom-module id="pager-nav-styles"><template><style>
 :host {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9,7 +9,7 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  @apply (--um-pagination); }
+  @apply (--pager-nav); }
 
 :host([hidden]), [hidden] {
   display: none !important; }
@@ -24,23 +24,23 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  @apply (--um-pagination-button); }
+  @apply (--pager-nav-button); }
   .btn-prev {
-    @apply (--um-pagination-button-prev); }
+    @apply (--pager-nav-button-prev); }
   .btn-next {
-    @apply (--um-pagination-button-next); }
+    @apply (--pager-nav-button-next); }
   .btn-prev-icon {
-    @apply (--um-pagination-icon-prev); }
+    @apply (--pager-nav-icon-prev); }
   .btn-next-icon {
-    @apply (--um-pagination-icon-next); }
+    @apply (--pager-nav-icon-next); }
   .btn-text {
-    @apply (--um-pagination-button-text); }
+    @apply (--pager-nav-button-text); }
 
 .btn-prev-icon ~ .btn-prev-text:not(.sr-only) {
-  margin-left: var(--um-pagination-icon-text-margin, 0.4em); }
+  margin-left: var(--pager-nav-icon-text-margin, 0.4em); }
 
 .btn-next-text:not(.sr-only) ~ .btn-next-icon {
-  margin-left: var(--um-pagination-icon-text-margin, 0.4em); }
+  margin-left: var(--pager-nav-icon-text-margin, 0.4em); }
 
 .sr-only {
   border: 0;

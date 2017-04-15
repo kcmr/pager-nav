@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>Demo um-pagination</title>
+    <title>Demo pager-nav</title>
     <script>
       window.Polymer = { dom: 'shadow', lazyRegister: true, useNativeCSSProperties: true };
     </script>
@@ -11,7 +11,7 @@
     <link rel="import" href="../../iron-icons/iron-icons.html">
     <link rel="import" href="../../paper-toast/paper-toast.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../um-pagination.html">
+    <link rel="import" href="../pager-nav.html">
     <style>
       body {
         margin: 0;
@@ -36,11 +36,11 @@
       <demo-snippet>
         <h1>With default texts for previous and next buttons</h1>
         <template is="dom-bind" id="demo">
-          <um-pagination
+          <pager-nav
             previous-url="#"
             next-url="http://google.es"
             on-pagination-click="showToast">
-          </um-pagination>
+          </pager-nav>
           <paper-toast id="toast" text="[[text]]"></paper-toast>
         </template>
         <script>
@@ -56,13 +56,13 @@
       <demo-snippet>
         <h1>With default texts and icons</h1>
         <template is="dom-bind" id="demo-2">
-          <um-pagination
+          <pager-nav
             previous-url="#"
             next-url="http://google.es"
             previous-icon="arrow-back"
             next-icon="arrow-forward"
             on-pagination-click="showToast">
-          </um-pagination>
+          </pager-nav>
           <paper-toast id="toast" text="[[text]]"></paper-toast>
         </template>
         <script>
@@ -78,14 +78,14 @@
       <demo-snippet>
         <h1>With button texts hidden</h1>
         <template is="dom-bind" id="demo-3">
-          <um-pagination
+          <pager-nav
             previous-url="#"
             next-url="http://google.es"
             previous-icon="arrow-back"
             next-icon="arrow-forward"
             hide-button-text
             on-pagination-click="showToast">
-          </um-pagination>
+          </pager-nav>
           <paper-toast id="toast" text="[[text]]"></paper-toast>
         </template>
         <script>
@@ -101,13 +101,13 @@
       <demo-snippet>
         <h1>With a button disabled</h1>
         <template is="dom-bind" id="demo-4">
-          <um-pagination
+          <pager-nav
             previous-url="#"
             previous-icon="arrow-back"
             next-icon="arrow-forward"
             hide-button-text
             on-pagination-click="showToast">
-          </um-pagination>
+          </pager-nav>
           <paper-toast id="toast" text="[[text]]"></paper-toast>
         </template>
         <script>
@@ -123,7 +123,7 @@
       <demo-snippet>
         <h1>Navigate on click</h1>
         <template is="dom-bind" id="demo-5">
-          <um-pagination
+          <pager-nav
             previous-url="#"
             previous-icon="arrow-back"
             next-icon="arrow-forward"
@@ -131,7 +131,7 @@
             navigate
             on-pagination-click="showToast">
             I could be a numeric pagination…
-          </um-pagination>
+          </pager-nav>
           <paper-toast id="toast" text="[[text]]"></paper-toast>
         </template>
         <script>

@@ -1,5 +1,5 @@
 {
-  "name": "um-pagination",
+  "name": "pager-nav",
   "version": "1.0.0",
   "description": "Your component description",
   "keywords": [],
@@ -16,6 +16,6 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5"
   },
   "main": [
-    "um-pagination.html"
+    "pager-nav.html"
   ]
 }

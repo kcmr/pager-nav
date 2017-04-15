@@ -4,7 +4,7 @@
 
   Polymer({
 
-    is: 'um-pagination',
+    is: 'pager-nav',
 
     properties: {
       /**
