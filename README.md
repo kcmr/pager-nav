@@ -14,4 +14,3 @@ The following custom properties and mixins are available for styling:
 | Custom property | Description     | Default        |
 |:----------------|:----------------|:--------------:|
 | --um-pagination  | Mixin applied to :host     | {}  |
-| --cells-fontDefault  | Mixin applied to :host font-family    | sans-serif  |

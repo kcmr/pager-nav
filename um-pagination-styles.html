@@ -1,14 +1,31 @@
 <dom-module id="um-pagination-styles"><template><style>
 :host {
-  display: block;
-  box-sizing: border-box;
-  font-family: var(--cells-fontDefault, sans-serif);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   @apply (--um-pagination); }
 
 :host([hidden]), [hidden] {
-  display: none; }
+  display: none !important; }
 
-*, *:before, *:after {
-  box-sizing: inherit; }
+.btn {
+  @apply (--um-pagination-button); }
+  .btn-prev {
+    @apply (--um-pagination-button-prev); }
+  .btn-next {
+    @apply (--um-pagination-button-next); }
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
 
 </style></template></dom-module>

@@ -1,16 +1,25 @@
-@import "bower_components/cells-sass/main";
-
 :host {
-  display: block;
-  box-sizing: border-box;
-  font-family: var(--cells-fontDefault, sans-serif);
+  display: flex;
+  justify-content: space-between;
   @apply(--um-pagination);
 }
 
-:host([hidden]), [hidden] {
-  display:none;
+:host([hidden]), [hidden] { display: none !important; }
+
+.btn {
+  @apply(--um-pagination-button);
+
+  &-prev { @apply(--um-pagination-button-prev); }
+  &-next { @apply(--um-pagination-button-next); }
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

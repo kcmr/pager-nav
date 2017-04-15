@@ -12,15 +12,7 @@
        */
       previousUrl: {
         type: String,
-        value: ''
-      },
-
-      /**
-       * Text for the previous button.
-       */
-      previousText: {
-        type: String,
-        value: ''
+        value: null
       },
 
       /**
@@ -28,7 +20,15 @@
        */
       nextUrl: {
         type: String,
-        value: ''
+        value: null
+      },
+
+      /**
+       * Text for the previous button.
+       */
+      previousText: {
+        type: String,
+        value: 'Previous'
       },
 
       /**
@@ -36,7 +36,38 @@
        */
       nextText: {
         type: String,
-        value: ''
+        value: 'Next'
+      },
+
+      /**
+       * Icon ID for the previous button.
+       */
+      previousIcon: String,
+
+      /**
+       * Icon ID for the next button.
+       */
+      nextIcon: String,
+
+      /**
+       * Hide button text (not icon) visually but keep it readable for screen readers.
+       */
+      hideButtonText: {
+        type: Boolean,
+        value: false
+      },
+
+      /**
+       * Set to true to navigate to nextUrl or previousUrl when the user clicks a button.
+       */
+      navigate: {
+        type: Boolean,
+        value: false
+      },
+
+      _btnTextClass: {
+        type: String,
+        computed: '_computeBtnTextClass(hideButtonText)'
       }
     },
 
@@ -45,6 +76,18 @@
         url: e.currentTarget.dataset.url,
         item: e.currentTarget.dataset.btn
       });
+
+      if (this.navigate) {
+        document.location.href = e.currentTarget.dataset.url;
+      }
+    },
+
+    _computeDisabled: function(url) {
+      return url ? false : true;
+    },
+
+    _computeBtnTextClass: function(hideButtonText) {
+      return hideButtonText ? 'sr-only' : '';
     }
   });
 

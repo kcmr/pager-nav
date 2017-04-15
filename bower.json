@@ -5,14 +5,13 @@
   "keywords": [],
   "ignore": [],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.6.0"
+    "polymer": "Polymer/polymer#^1.6.0",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.12"
   },
   "devDependencies": {
-    "cells-sass": "^2.0.0",
-    "cells-demo-helper": "^1.0.0",
-    "cells-shadow-query-selector": "^1.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "Polymer/web-component-tester#^4.0.0"
+    "web-component-tester": "Polymer/web-component-tester#^4.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0"
   },
   "main": [
     "um-pagination.html"

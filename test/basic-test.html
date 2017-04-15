@@ -28,27 +28,47 @@
         btnNext = el.$$('.btn-next');
       });
 
-      test('setting previousUrl attribute sets that value to previous button', function() {
-        el.previousUrl = 'p';
-        assert.equal(btnPrev.dataset.url, 'p');
+      test('setting hide-button-text attribute to true hides buttons visually', function() {
+        el.hideButtonText = true;
+        [btnPrev, btnNext].forEach(function(btn) {
+          assert.isTrue(btn.querySelector('.btn-text').classList.contains('sr-only'));
+        });
       });
 
-      test('setting previous-text attribute sets that value to previous button', function() {
-        el.previousText = 'previous';
-        assert.equal(btnPrev.innerHTML, el.previousText);
-      });
-
-      test('setting nextUrl attribute sets that value to next button', function() {
-        el.nextUrl = 'n';
-        assert.equal(btnNext.dataset.url, 'n');
+      test('omitting previous-url or next-url attributes disables previous or next button', function() {
+        assert.isTrue(btnPrev.disabled);
+        assert.isTrue(btnNext.disabled);
       });
 
       test('setting next-text attribute sets that value to next button', function() {
         el.nextText = 'next';
-        assert.equal(btnNext.innerHTML, el.nextText);
+        assert.equal(btnNext.innerText.trim(), el.nextText);
       });
 
-      test('clicking a button fires "pagination-click" event', function() {
+      test('setting previous-text attribute sets that value to previous button', function() {
+        el.previousText = 'previous';
+        assert.equal(btnPrev.innerText.trim(), el.previousText);
+      });
+
+      test('setting previous-icon sets that icon to previous button icon', function(done) {
+        el.previousIcon = 'any';
+        flush(function() {
+          var icon = el.$$('.btn-prev iron-icon');
+          assert.equal(icon.icon, el.previousIcon);
+          done();
+        });
+      });
+
+      test('setting next-icon sets that icon to next button icon', function(done) {
+        el.nextIcon = 'any';
+        flush(function() {
+          var icon = el.$$('.btn-next iron-icon');
+          assert.equal(icon.icon, el.nextIcon);
+          done();
+        });
+      });
+
+      test('clicking a button fires "pagination-click" event with url and item detail', function() {
         var spy = sinon.spy();
         el.addEventListener('pagination-click', spy);
         el.previousUrl = 'any';
@@ -58,6 +78,13 @@
         assert.isTrue(spy.called);
         assert.equal(spy.getCall(0).args[0].detail.url, 'any');
         assert.equal(spy.getCall(0).args[0].detail.item, 'previous');
+      });
+
+      test('setting navigate to true navigates to previousUrl or nextUrl after clicking a button', function() {
+        el.previousUrl = '#nanana';
+        el.navigate = true;
+        btnPrev.click();
+        assert.equal(document.location.hash, el.previousUrl);
       });
     });
   </script>
