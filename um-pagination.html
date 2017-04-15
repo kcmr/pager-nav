@@ -25,7 +25,7 @@ The following custom properties and mixins are available for styling:
   <template strip-whitespace>
     <style include="um-pagination-styles um-pagination-shared-styles"></style>
 
-    <button class="btn btn-prev" data-url$="[[previousUrl]]" data-btn="previous" on-tap="_onTap" disabled="[[_computeDisabled(previousUrl)]]">
+    <button class="btn btn-prev" data-url$="[[previousUrl]]" data-btn="previous" on-click="_onClick" disabled="[[_computeDisabled(previousUrl)]]">
       <template is="dom-if" if="[[previousIcon]]">
         <iron-icon
           style$="width: [[iconSize]]px; height: [[iconSize]]px;"
@@ -38,8 +38,7 @@ The following custom properties and mixins are available for styling:
 
     <content></content>
 
-    <button class="btn btn-next" data-url$="[[nextUrl]]" data-btn="next" on-tap="_onTap" disabled="[[_computeDisabled(nextUrl)]]">
-      <span class$="btn-text [[_btnTextClass]]">[[nextText]]</span>
+    <button class="btn btn-next" data-url$="[[nextUrl]]" data-btn="next" on-click="_onClick" disabled="[[_computeDisabled(nextUrl)]]">
       <template is="dom-if" if="[[nextIcon]]">
         <iron-icon
           style$="width: [[iconSize]]px; height: [[iconSize]]px;"

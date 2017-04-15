@@ -79,7 +79,12 @@
       }
     },
 
-    _onTap: function(e) {
+    /**
+     * Fired when the user clicks next or previous button.
+     * @event pagination-click
+     * @param  {Object} detail {url: nextUrl or previousUrl, item: previous or next}
+     */
+    _onClick: function(e) {
       this.fire('pagination-click', {
         url: e.currentTarget.dataset.url,
         item: e.currentTarget.dataset.btn
