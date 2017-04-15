@@ -10,29 +10,139 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../../iron-icons/iron-icons.html">
     <link rel="import" href="../../paper-toast/paper-toast.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../um-pagination.html">
-    <link rel="import" href="css/demo-styles.html">
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .wrapper {
+        max-width: 600px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 22px;
+        font-weight: normal;
+        margin-top: 0;
+      }
+      demo-snippet {
+        margin-bottom: 40px;
+      }
+    </style>
   </head>
   <body>
-    <template is="dom-bind" id="demo">
-      <um-pagination
-        previous-url="#"
-        next-url="http://google.es"
-        hide-button-text
-        previous-icon="arrow-back"
-        next-icon="arrow-forward"
-        on-pagination-click="showToast">
-      </um-pagination>
-      <paper-toast id="toast" text="[[text]]"></paper-toast>
-    </template>
-    <script>
-      (function(d) {
-        d.showToast = function(e) {
-          d.$.toast.open();
-          d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
-        }
-      }(document.getElementById('demo')));
-    </script>
+    <div class="wrapper">
+      <demo-snippet>
+        <h1>With default texts for previous and next buttons</h1>
+        <template is="dom-bind" id="demo">
+          <um-pagination
+            previous-url="#"
+            next-url="http://google.es"
+            on-pagination-click="showToast">
+          </um-pagination>
+          <paper-toast id="toast" text="[[text]]"></paper-toast>
+        </template>
+        <script>
+          (function(d) {
+            d.showToast = function(e) {
+              d.$.toast.open();
+              d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+            }
+          }(document.getElementById('demo')));
+        </script>
+      </demo-snippet>
 
+      <demo-snippet>
+        <h1>With default texts and icons</h1>
+        <template is="dom-bind" id="demo-2">
+          <um-pagination
+            previous-url="#"
+            next-url="http://google.es"
+            previous-icon="arrow-back"
+            next-icon="arrow-forward"
+            on-pagination-click="showToast">
+          </um-pagination>
+          <paper-toast id="toast" text="[[text]]"></paper-toast>
+        </template>
+        <script>
+          (function(d) {
+            d.showToast = function(e) {
+              d.$.toast.open();
+              d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+            }
+          }(document.getElementById('demo-2')));
+        </script>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h1>With button texts hidden</h1>
+        <template is="dom-bind" id="demo-3">
+          <um-pagination
+            previous-url="#"
+            next-url="http://google.es"
+            previous-icon="arrow-back"
+            next-icon="arrow-forward"
+            hide-button-text
+            on-pagination-click="showToast">
+          </um-pagination>
+          <paper-toast id="toast" text="[[text]]"></paper-toast>
+        </template>
+        <script>
+          (function(d) {
+            d.showToast = function(e) {
+              d.$.toast.open();
+              d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+            }
+          }(document.getElementById('demo-3')));
+        </script>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h1>With a button disabled</h1>
+        <template is="dom-bind" id="demo-4">
+          <um-pagination
+            previous-url="#"
+            previous-icon="arrow-back"
+            next-icon="arrow-forward"
+            hide-button-text
+            on-pagination-click="showToast">
+          </um-pagination>
+          <paper-toast id="toast" text="[[text]]"></paper-toast>
+        </template>
+        <script>
+          (function(d) {
+            d.showToast = function(e) {
+              d.$.toast.open();
+              d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+            }
+          }(document.getElementById('demo-4')));
+        </script>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h1>Navigate on click</h1>
+        <template is="dom-bind" id="demo-5">
+          <um-pagination
+            previous-url="#"
+            previous-icon="arrow-back"
+            next-icon="arrow-forward"
+            hide-button-text
+            navigate
+            on-pagination-click="showToast">
+            I could be a numeric pagination…
+          </um-pagination>
+          <paper-toast id="toast" text="[[text]]"></paper-toast>
+        </template>
+        <script>
+          (function(d) {
+            d.showToast = function(e) {
+              d.$.toast.open();
+              d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+            }
+          }(document.getElementById('demo-5')));
+        </script>
+      </demo-snippet>
+    </div>
   </body>
 </html>
