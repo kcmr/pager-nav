@@ -1,11 +1,18 @@
 {
   "name": "pager-nav",
-  "version": "1.0.0",
-  "description": "Your component description",
-  "keywords": [],
+  "version": "0.0.0",
+  "description": "Custom element that displays typical previus and next buttons in a pagination.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "custom element",
+    "pagination",
+    "pager",
+    "navigation"
+  ],
   "ignore": [],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.6.0",
+    "polymer": "Polymer/polymer#^1.8.0",
     "iron-icon": "PolymerElements/iron-icon#^1.0.12"
   },
   "devDependencies": {
