@@ -9,24 +9,30 @@
     </script>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../../iron-icons/iron-icons.html">
+    <link rel="import" href="../../paper-toast/paper-toast.html">
     <link rel="import" href="../um-pagination.html">
     <link rel="import" href="css/demo-styles.html">
   </head>
   <body>
-    <um-pagination
-      next-url="http://google.es"
-      navigate
-      hide-button-text
-      previous-icon="arrow-back"
-      next-icon="arrow-forward"></um-pagination>
+    <template is="dom-bind" id="demo">
+      <um-pagination
+        previous-url="#"
+        next-url="http://google.es"
+        hide-button-text
+        previous-icon="arrow-back"
+        next-icon="arrow-forward"
+        on-pagination-click="showToast">
+      </um-pagination>
+      <paper-toast id="toast" text="[[text]]"></paper-toast>
+    </template>
     <script>
-      document.addEventListener('WebComponentsReady', function() {
-        var el = document.querySelector('um-pagination');
-        el.addEventListener('pagination-click', function(e) {
-          console.log(e);
-        });
-      });
-
+      (function(d) {
+        d.showToast = function(e) {
+          d.$.toast.open();
+          d.text = 'URL: ' + e.detail.url + ' ITEM: ' + e.detail.item;
+        }
+      }(document.getElementById('demo')));
     </script>
+
   </body>
 </html>
