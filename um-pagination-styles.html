@@ -6,6 +6,9 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   @apply (--um-pagination); }
 
 :host([hidden]), [hidden] {
@@ -15,11 +18,29 @@
   font: inherit;
   background-color: transparent;
   border: 0;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   @apply (--um-pagination-button); }
   .btn-prev {
     @apply (--um-pagination-button-prev); }
   .btn-next {
     @apply (--um-pagination-button-next); }
+  .btn-prev-icon {
+    @apply (--um-pagination-icon-prev); }
+  .btn-next-icon {
+    @apply (--um-pagination-icon-next); }
+  .btn-text {
+    @apply (--um-pagination-button-text); }
+
+.btn-prev-icon ~ .btn-prev-text:not(.sr-only) {
+  margin-left: var(--um-pagination-icon-text-margin, 0.4em); }
+
+.btn-next-text:not(.sr-only) ~ .btn-next-icon {
+  margin-left: var(--um-pagination-icon-text-margin, 0.4em); }
 
 .sr-only {
   border: 0;

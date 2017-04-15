@@ -1,6 +1,7 @@
 :host {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   @apply(--um-pagination);
 }
 
@@ -10,10 +11,24 @@
   font: inherit;
   background-color: transparent;
   border: 0;
+  display: inline-flex;
+  align-items: center;
   @apply(--um-pagination-button);
 
   &-prev { @apply(--um-pagination-button-prev); }
   &-next { @apply(--um-pagination-button-next); }
+
+  &-prev-icon { @apply(--um-pagination-icon-prev); }
+  &-next-icon { @apply(--um-pagination-icon-next); }
+
+  &-text { @apply(--um-pagination-button-text); }
+}
+
+.btn-prev-icon ~ .btn-prev-text:not(.sr-only) {
+  margin-left: var(--um-pagination-icon-text-margin, 0.4em);
+}
+.btn-next-text:not(.sr-only) ~ .btn-next-icon {
+  margin-left: var(--um-pagination-icon-text-margin, 0.4em);
 }
 
 .sr-only {
