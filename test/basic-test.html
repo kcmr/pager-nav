@@ -84,12 +84,16 @@
         var spy = sinon.spy();
         el.addEventListener('pagination-click', spy);
         el.previousUrl = 'any';
+        el.nextUrl = 'patatas';
 
-        btnPrev.click();
+        [btnPrev, btnNext].forEach(function(btn) {
+          btn.click();
+        });
 
-        assert.isTrue(spy.called);
         assert.equal(spy.getCall(0).args[0].detail.url, 'any');
         assert.equal(spy.getCall(0).args[0].detail.item, 'previous');
+        assert.equal(spy.getCall(1).args[0].detail.url, 'patatas');
+        assert.equal(spy.getCall(1).args[0].detail.item, 'next');
       });
 
       test('setting navigate to true navigates to previousUrl or nextUrl after clicking a button', function() {
