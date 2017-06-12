@@ -24,17 +24,51 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  @apply (--pager-nav-button); }
+  @apply --pager-nav-button; }
+  .btn:hover {
+    @apply --pager-nav-button-hover; }
+    .btn:hover .btn-icon {
+      @apply --pager-nav-icon-hover; }
+  .btn:active {
+    @apply --pager-nav-button-active; }
+    .btn:active .btn-icon {
+      @apply --pager-nav-icon-active; }
+  .btn:focus {
+    @apply --pager-nav-button-focus; }
+    .btn:focus .btn-icon {
+      @apply --pager-nav-icon-focus; }
+  .btn[disabled] {
+    @apply --pager-nav-button-disabled; }
+    .btn[disabled] .btn-icon {
+      @apply --pager-nav-icon-disabled; }
   .btn-prev {
-    @apply (--pager-nav-button-prev); }
+    @apply --pager-nav-button-prev; }
+    .btn-prev:hover {
+      @apply --pager-nav-button-prev-hover; }
+    .btn-prev:active {
+      @apply --pager-nav-button-prev-active; }
+    .btn-prev:focus {
+      @apply --pager-nav-button-prev-focus; }
+    .btn-prev[disabled] {
+      @apply --pager-nav-button-prev-disabled; }
   .btn-next {
-    @apply (--pager-nav-button-next); }
+    @apply --pager-nav-button-next; }
+    .btn-next:hover {
+      @apply --pager-nav-button-next-hover; }
+    .btn-next:active {
+      @apply --pager-nav-button-next-active; }
+    .btn-next:focus {
+      @apply --pager-nav-button-next-focus; }
+    .btn-next[disabled] {
+      @apply --pager-nav-button-next-disabled; }
+  .btn-icon {
+    @apply --pager-nav-icon; }
   .btn-prev-icon {
-    @apply (--pager-nav-icon-prev); }
+    @apply --pager-nav-icon-prev; }
   .btn-next-icon {
-    @apply (--pager-nav-icon-next); }
+    @apply --pager-nav-icon-next; }
   .btn-text {
-    @apply (--pager-nav-button-text); }
+    @apply --pager-nav-button-text; }
 
 .btn-prev-icon ~ .btn-prev-text:not(.sr-only) {
   margin-left: var(--pager-nav-icon-text-margin, 0.4em); }

@@ -13,15 +13,50 @@
   border: 0;
   display: inline-flex;
   align-items: center;
-  @apply(--pager-nav-button);
+  @apply --pager-nav-button;
 
-  &-prev { @apply(--pager-nav-button-prev); }
-  &-next { @apply(--pager-nav-button-next); }
+  &:hover {
+    @apply --pager-nav-button-hover;
+    .btn-icon { @apply --pager-nav-icon-hover; }
+  }
+  &:active {
+    @apply --pager-nav-button-active;
+    .btn-icon { @apply --pager-nav-icon-active; }
+  }
+  &:focus {
+    @apply --pager-nav-button-focus;
+    .btn-icon { @apply --pager-nav-icon-focus; }
+  }
+  &[disabled] {
+    @apply --pager-nav-button-disabled;
+    .btn-icon { @apply --pager-nav-icon-disabled; }
+  }
 
-  &-prev-icon { @apply(--pager-nav-icon-prev); }
-  &-next-icon { @apply(--pager-nav-icon-next); }
+  &-prev {
+    @apply --pager-nav-button-prev;
 
-  &-text { @apply(--pager-nav-button-text); }
+    &:hover  { @apply --pager-nav-button-prev-hover; }
+    &:active { @apply --pager-nav-button-prev-active; }
+    &:focus  { @apply --pager-nav-button-prev-focus; }
+    &[disabled] { @apply --pager-nav-button-prev-disabled; }
+  }
+
+  &-next {
+    @apply --pager-nav-button-next;
+
+    &:hover  { @apply --pager-nav-button-next-hover; }
+    &:active { @apply --pager-nav-button-next-active; }
+    &:focus  { @apply --pager-nav-button-next-focus; }
+    &[disabled] { @apply --pager-nav-button-next-disabled; }
+  }
+
+  &-icon { @apply --pager-nav-icon; }
+
+  &-prev-icon { @apply --pager-nav-icon-prev; }
+  &-next-icon { @apply --pager-nav-icon-next; }
+
+  &-text { @apply --pager-nav-button-text ; }
+
 }
 
 .btn-prev-icon ~ .btn-prev-text:not(.sr-only) {

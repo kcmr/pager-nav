@@ -46,7 +46,7 @@ The following custom properties and mixins are available for styling:
     <button class="btn btn-prev" data-url$="[[previousUrl]]" data-btn="previous" on-click="_onClick" disabled="[[_computeDisabled(previousUrl)]]">
       <template is="dom-if" if="[[previousIcon]]">
         <iron-icon
-          class="btn-prev-icon"
+          class="btn-icon btn-prev-icon"
           style$="width: [[iconSize]]px; height: [[iconSize]]px;"
           icon="[[previousIcon]]"
           aria-hidden="true">
@@ -61,7 +61,7 @@ The following custom properties and mixins are available for styling:
       <span class$="btn-text btn-next-text [[_btnTextClass]]">[[nextText]]</span>
       <template is="dom-if" if="[[nextIcon]]">
         <iron-icon
-          class="btn-next-icon"
+          class="btn-icon btn-next-icon"
           style$="width: [[iconSize]]px; height: [[iconSize]]px;"
           icon="[[nextIcon]]"
           aria-hidden="true">
